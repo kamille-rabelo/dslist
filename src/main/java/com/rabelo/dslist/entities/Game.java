@@ -1,4 +1,4 @@
-package com.rabelo.dslist;
+package com.rabelo.dslist.entities;
 
 import jakarta.persistence.*;
 
