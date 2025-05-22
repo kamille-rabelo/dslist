@@ -1,4 +1,4 @@
-package com.rabelo.dslist.controller;
+package com.rabelo.dslist.controllers;
 
 import com.rabelo.dslist.dto.GameDto;
 import com.rabelo.dslist.dto.GameMinDto;
@@ -21,8 +21,8 @@ public class GameController {
 
     @GetMapping
     public ResponseEntity<List<GameMinDto>> findAll() {
-        var list = gameService.findAll();
-        return ResponseEntity.ok(list);
+        var games = gameService.findAll();
+        return ResponseEntity.ok(games);
     }
 
     @GetMapping(value = "/{id}")
