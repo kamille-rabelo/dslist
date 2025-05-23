@@ -27,4 +27,10 @@ public class GameService {
          var game = gameRepository.findById(id);
          return game.map(GameDto::new).orElse(null);
      }
+
+     @Transactional(readOnly = true)
+    public List<GameMinDto> findByList(Long listId) {
+        var games = gameRepository.searchByList(listId);
+        return games.stream().map(GameMinDto::new).collect(Collectors.toList());
+    }
 }
